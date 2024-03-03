@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 import Error from "../Shared/Error";
+import About from "../Pages/About/About";
 
 const MainRouter = createBrowserRouter([
     {
@@ -15,7 +16,7 @@ const MainRouter = createBrowserRouter([
             },
             {
                 path: '/about',
-                element: <p>About</p>
+                element: <About></About>
             },
             {
                 path: '/all-poem',

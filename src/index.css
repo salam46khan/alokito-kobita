@@ -23,7 +23,7 @@
 
 /* welcme banner style  */
 .MyBanner{
-    background: linear-gradient(#01257D, #ff000043), url('../src/assets/img/banner.jpg');
+    background: linear-gradient(#01257D, #00d5ff43), url('../src/assets/img/bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,9 +32,43 @@
 
 /* error style  */
 .MyError{
-    background: linear-gradient(#01257D, #ff000043), url('../src/assets/img/error.jpg');
+    background: linear-gradient(#01257D, #00d5ff43), url('../src/assets/img/error.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* page banner style  */
+.MyPageBanner{
+    background: linear-gradient(#01257D, #00d5ff43), url('../src/assets/img/pageB-3.gif');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+}
+
+/* in about > what offer section style  */
+.MyOffer{
+    background:linear-gradient(#eeffff, #eaeaff5a), url('../src/assets/img/whatOffer.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.MyOfferCard{
+    box-shadow: inset 1px 1px 15px #01257D55;
+    padding: 25px 10px;
+    text-align: center;
+    background: #fff4;
+    transition: 0.3s;
+}
+.MyOfferCard:hover{
+    box-shadow: inset 2px 2px 15px #01257D68, inset -2px -1px 5px #01257D30;
+    transform: translateY(-10px);
+}
+.CardIcon{
+    transition: 0.3s;
+}
+.MyOfferCard:hover .CardIcon{
+    transform: rotate(360deg);
+    font-size: 50px;
 }

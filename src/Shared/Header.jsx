@@ -6,7 +6,7 @@ import { GrClose } from "react-icons/gr";
 import { useState } from 'react';
 
 const Header = () => {
-    const [toggle, setToggle] = useState(false)
+    const [toggle, setToggle] = useState(true)
 
     const NavLists = <>
         <NavLink to={'/'}>Home</NavLink>
@@ -16,7 +16,7 @@ const Header = () => {
         <NavLink to={'/fev-poem'}>My Favorite</NavLink>
     </>
     return (
-        <div className="bg-NavyBlue fixed top-0 left-0 w-full py-1">
+        <div className="bg-NavyBlue fixed top-0 left-0 w-full py-1 z-50">
             <div className="container mx-auto flex z-50  items-center text-white relative px-2">
                 <div className="z-40 md:hidden w-2/12">
                     <Button onClick={() => setToggle(!toggle)} variant="text" className='text-ElectricBlue text-2xl p-1'>
