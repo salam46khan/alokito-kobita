@@ -22,6 +22,10 @@ module.exports = withMT({
         NavyBlue: '#01257D',
         ElectricBlue: '#00FFFF'
       },
+      fontFamily: {
+        NormalText: ["Ubuntu", "sans-serif"],
+        TitleText: ["Rowdies", "sans-serif"]
+      }
     },
   },
   plugins: [],

@@ -1,3 +1,40 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap') */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Header style  */
+.MyNav{
+    text-transform: uppercase;
+}
+.MyNav a{
+    padding: 6px 20px;
+    transition: 0.3s;
+    border-radius: 25px;
+    box-shadow: inset -0px -2px 6px;
+}
+.MyNav a:hover, .MyNav a.active{
+    color: #00ffff;
+    box-shadow: inset -0px -4px 5px;
+}
+
+
+/* welcme banner style  */
+.MyBanner{
+    background: linear-gradient(#01257D, #ff000043), url('../src/assets/img/banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* error style  */
+.MyError{
+    background: linear-gradient(#01257D, #ff000043), url('../src/assets/img/error.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
