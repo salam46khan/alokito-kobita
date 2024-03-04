@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import loginPic from '../../assets/img/Sign up(1).gif'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 const Signup = () => {
+    const { createUser } = useContext(AuthContext)
+
     const [image, setImage] = useState(null);
 
     const handleUploadImage = event => {
@@ -9,16 +12,16 @@ const Signup = () => {
         const img = event.target.files[0]
         const formData = new FormData();
         formData.append('image', img);
-        
-        fetch(`https://api.imgbb.com/1/upload?key=6df55e6740c278942407a5354eacc610`,{
+
+        fetch(`https://api.imgbb.com/1/upload?key=6df55e6740c278942407a5354eacc610`, {
             method: "POST",
             body: formData
         })
-        .then(res => res.json())
-        .then(data => {
-            // console.log(data.data.url_viewer);
-            setImage(data.data.url_viewer)
-        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data.data.url_viewer);
+                setImage(data.data.url_viewer)
+            })
     }
     const handleSignUp = event => {
         event.preventDefault()
@@ -27,6 +30,15 @@ const Signup = () => {
         const email = form.email.value;
         const password = form.password.value
         console.log(name, email, password, image);
+
+        createUser(email, password)
+        .then(result => {
+            console.log(result.user);
+        })
+        .catch(error =>{
+            // setError(error.message)
+            console.log(error);
+        })
 
     }
     return (
@@ -70,7 +82,7 @@ const Signup = () => {
                                     type="file" />
                             </div>
                             <div className="mb-4">
-                                <input className="bg-cyan-200 rounded-full w-full uppercase text-sm  focus:outline-none focus:shadow-outline py-3 shadow-md shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 " type="submit" value={'Login'} />
+                                <input className="bg-cyan-200 rounded-full w-full uppercase text-sm  focus:outline-none focus:shadow-outline py-3 shadow-md shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 " type="submit" value={'Sign Up'} />
                             </div>
                         </form>
 
