@@ -5,7 +5,7 @@ const WhatOffer = () => {
         <div className="py-16 px-3 bg-light-blue-50 MyOffer">
             <div className="container mx-auto ">
                 <div className="w-full max-w-3xl mx-auto space-y-2 text-center mb-10">
-                    <h2 className='text-NavyBlue font-bold text-4xl'>Introduction</h2>
+                    <h2 className='text-NavyBlue font-bold text-4xl'>What We Offer</h2>
                     <hr className='w-[280px] mx-auto border-4 border-NavyBlue' />
                     <p className="text-gray-500">
                         Alokito Kobita Poetry Finds Its Voice and Hearts Find Their Song. Alokito Kobita invites you to explore the beauty and power of poetry in its myriad forms.

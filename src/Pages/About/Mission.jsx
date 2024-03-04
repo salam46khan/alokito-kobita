@@ -6,12 +6,11 @@ const Mission = () => {
                 <img className='w-full' src={missionPic} alt="" />
             </div>
             <div className="w-full md:w-2/5">
-                <h2 className='text-NavyBlue font-bold text-4xl'>Introduction</h2>
+                <h2 className='text-NavyBlue font-bold text-4xl'>Our Mission</h2>
                 <hr className='w-[280px] border-4 border-NavyBlue' />
                 <p className='my-8'>
-                    Welcome to Alokito Kobita, a digital haven for poetry enthusiasts and wordsmiths alike. At Alokito Kobita, we believe in the power of poetry to inspire, heal, and unite.
-                    <br /> <br />
-                    Our platform is dedicated to celebrating the art of verse in all its forms and providing a welcoming space for poets and readers to connect, share, and explore the beauty of language.
+                    At Alokito Kobita, our mission is simple: to cultivate a thriving community of poets and poetry lovers and to promote the appreciation and creation of poetry as a vital form of expression. We strive to provide a platform where poets from diverse backgrounds can showcase their work, connect with fellow writers, and engage with an audience passionate about the written word.
+                    <br />
                     <br />
                     Join us as we celebrate the magic of language and the boundless possibilities of the human spirit
                 </p>

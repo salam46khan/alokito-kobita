@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import { FaBars } from "react-icons/fa6";
+import { FaSignInAlt } from "react-icons/fa";
 import logo from '../../public/logo.png'
 import { Button } from '@material-tailwind/react';
 import { GrClose } from "react-icons/gr";
@@ -47,7 +48,12 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="w-2/12 flex justify-end z-40">
-                    <Link to={'/'}><Button size="md" className='bg-cyan-200 text-black'>Login</Button></Link>
+                    <Link to={'/login'}>
+                        <Button size="md" className='bg-cyan-200 py-2 px-2 md:px-5 rounded-full flex items-center gap-2 text-black text-md'>
+                            <span className='hidden md:block'>Login</span>
+                            <FaSignInAlt className='text-2xl'/>
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </div>

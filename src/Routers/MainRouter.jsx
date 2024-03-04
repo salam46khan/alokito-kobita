@@ -3,6 +3,8 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 import Error from "../Shared/Error";
 import About from "../Pages/About/About";
+import Login from "../Pages/Registation/Login";
+import Signup from "../Pages/Registation/Signup";
 
 const MainRouter = createBrowserRouter([
     {
@@ -25,6 +27,14 @@ const MainRouter = createBrowserRouter([
             {
                 path: '/add-poem',
                 element: <p>Add Poem</p>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/signup',
+                element: <Signup></Signup>
             }
         ]
     }
