@@ -19,7 +19,7 @@ const Header = () => {
         <NavLink to={'/about'}>About</NavLink>
         <NavLink to={'/all-poem'}>All Poems</NavLink>
         <NavLink to={'/add-poem'}>Add Poems</NavLink>
-        <NavLink to={'/fev-poem'}>My Favorite</NavLink>
+        <NavLink to={'/my-fev'}>My Favorite</NavLink>
     </>
     return (
         <div className="bg-NavyBlue fixed top-0 left-0 w-full py-1 z-50">

@@ -7,6 +7,7 @@ import Login from "../Pages/Registation/Login";
 import Signup from "../Pages/Registation/Signup";
 import Profile from "../Pages/Profile/Profile";
 import PrivateRouter from "./PrivateRouter";
+import PoemDetails from "../Components/PoemDetails";
 
 const MainRouter = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ const MainRouter = createBrowserRouter([
             {
                 path: '/profile',
                 element: <PrivateRouter><Profile></Profile></PrivateRouter> 
+            },
+            {
+                path: '/my-fev',
+                element: <PoemDetails></PoemDetails>
             }
         ]
     }

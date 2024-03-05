@@ -1,4 +1,5 @@
 import AboutSec from "./AboutSec";
+import Categories from "./Categories";
 import RecentPoems from "./RecentPoems";
 import WelcomBanner from "./WelcomBanner";
 
@@ -8,6 +9,7 @@ const Home = () => {
             <WelcomBanner></WelcomBanner>
             <AboutSec></AboutSec>
             <RecentPoems></RecentPoems>
+            <Categories></Categories>
         </div>
     );
 };
