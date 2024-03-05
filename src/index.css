@@ -23,7 +23,7 @@
 
 /* welcme banner style  */
 .MyBanner{
-    background: linear-gradient(#01257D, #00d5ff43), url('../src/assets/img/bg.jpg');
+    background: linear-gradient(#01257D, #00d5ff43), url('../src/assets/img/bg-gif.gif');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

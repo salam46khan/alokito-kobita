@@ -1,4 +1,5 @@
 import AboutSec from "./AboutSec";
+import RecentPoems from "./RecentPoems";
 import WelcomBanner from "./WelcomBanner";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
         <div className="font-NormalText">
             <WelcomBanner></WelcomBanner>
             <AboutSec></AboutSec>
+            <RecentPoems></RecentPoems>
         </div>
     );
 };

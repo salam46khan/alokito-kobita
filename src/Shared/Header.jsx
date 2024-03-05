@@ -4,9 +4,14 @@ import { FaSignInAlt } from "react-icons/fa";
 import logo from '../../public/logo.png'
 import { Button } from '@material-tailwind/react';
 import { GrClose } from "react-icons/gr";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../Provider/AuthProvider';
+import profile from '../assets/img/profile.jpg'
 
 const Header = () => {
+
+    const { user } = useContext(AuthContext)
+
     const [toggle, setToggle] = useState(true)
 
     const NavLists = <>
@@ -48,12 +53,30 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="w-2/12 flex justify-end z-40">
-                    <Link to={'/login'}>
-                        <Button size="md" className='bg-cyan-200 py-2 px-2 md:px-5 rounded-full flex items-center gap-2 text-black text-md'>
-                            <span className='hidden md:block'>Login</span>
-                            <FaSignInAlt className='text-2xl'/>
-                        </Button>
-                    </Link>
+                    {
+                        user ?
+                            <Link className='' to={'/profile'}>
+                                <Button data-ripple-light="true" data-tooltip-target="tooltip" size="md" className='bg-cyan-200 py-2 px-2 md:px-5 rounded-full flex items-center gap-2 text-black text-md'>
+                                    <img className='h-7 w-7 rounded-full' src={user?.photoURL ? user?.photoURL : profile} alt="" />
+                                  
+                                    <span className='hidden md:block'>{user.displayName}</span>
+                                </Button>
+
+
+                                
+                            </Link>
+
+
+                            :
+
+                            <Link to={'/login'}>
+                                <Button size="md" className='bg-cyan-200 py-2 px-2 md:px-5 rounded-full flex items-center gap-2 text-black text-md'>
+                                    <span className='hidden md:block'>Login</span>
+                                    <FaSignInAlt className='text-2xl' />
+                                </Button>
+                            </Link>
+                    }
+
                 </div>
             </div>
         </div>

@@ -1,15 +1,28 @@
 // import { Button } from '@material-tailwind/react';
+import { useContext } from 'react';
 import loginPic from '../../assets/img/Mobile login.gif'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
+import GoogleLogin from './GoogleLogin';
 // import TextField from '@mui/material/TextField';
 
 const Login = () => {
+    const {logInUser} = useContext(AuthContext)
+
     const handleLogin = event => {
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
+        logInUser(email, password)
+        .then(result =>{
+            console.log(result.user);
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
     return (
         <div className="MyReg py-10 px-3">
@@ -34,7 +47,7 @@ const Login = () => {
                                 <input name='password' className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="password" />
                             </div>
                             <div className="mb-4">
-                                <input className="bg-cyan-200 rounded-full w-full uppercase text-sm  focus:outline-none focus:shadow-outline py-3 shadow-md shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 " type="submit" value={'Login'} />
+                                <input className="bg-cyan-200 rounded-full w-full uppercase text-sm  focus:outline-none focus:shadow-outline py-3 shadow-md shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 font-semibold" type="submit" value={'Login'} />
                             </div>
                         </form>
 
@@ -43,7 +56,7 @@ const Login = () => {
                                 <hr className='shadow-md  border-2'/>
                                 <p className='absolute top-0 left-1/2 mx-auto -translate-x-1/2 text-center w-8 bg-white'>or</p>
                             </div>
-                            <input name='password' className="bg-cyan-200 rounded-full w-full uppercase text-sm  focus:outline-none focus:shadow-outline py-3 shadow-md shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 " type="submit" value={'Login'} />
+                            <GoogleLogin></GoogleLogin>
                         </div>
                         <div className='mt-4 text-center'>
                             <p>Don't have an account yet! <Link className='text-blue-700 font-bold' to={'/signup'}>Registation</Link></p>

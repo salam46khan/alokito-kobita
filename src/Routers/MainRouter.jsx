@@ -5,6 +5,8 @@ import Error from "../Shared/Error";
 import About from "../Pages/About/About";
 import Login from "../Pages/Registation/Login";
 import Signup from "../Pages/Registation/Signup";
+import Profile from "../Pages/Profile/Profile";
+import PrivateRouter from "./PrivateRouter";
 
 const MainRouter = createBrowserRouter([
     {
@@ -26,7 +28,7 @@ const MainRouter = createBrowserRouter([
             },
             {
                 path: '/add-poem',
-                element: <p>Add Poem</p>
+                element: <PrivateRouter><p>add poem</p></PrivateRouter>
             },
             {
                 path: '/login',
@@ -35,6 +37,10 @@ const MainRouter = createBrowserRouter([
             {
                 path: '/signup',
                 element: <Signup></Signup>
+            },
+            {
+                path: '/profile',
+                element: <PrivateRouter><Profile></Profile></PrivateRouter> 
             }
         ]
     }
