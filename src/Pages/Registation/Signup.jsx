@@ -1,11 +1,16 @@
 import { useContext, useState } from 'react';
 import loginPic from '../../assets/img/Sign up(1).gif'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import GoogleLogin from './GoogleLogin';
 const Signup = () => {
     const { createUser } = useContext(AuthContext)
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location);
+
 
     const [image, setImage] = useState(null);
 
@@ -40,6 +45,7 @@ const Signup = () => {
                 displayName: name,
                 photoURL: image
             })
+            navigate(location.state ? location.state : '/')
         })
         .catch(error =>{
             // setError(error.message)

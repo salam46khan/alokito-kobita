@@ -2,6 +2,7 @@ import AboutSec from "./AboutSec";
 import CallAction from "./CallAction";
 import Categories from "./Categories";
 import ContactSec from "./ContactSec";
+import FAQsection from "./FAQsection";
 import RecentPoems from "./RecentPoems";
 import WelcomBanner from "./WelcomBanner";
 
@@ -13,7 +14,7 @@ const Home = () => {
             <RecentPoems></RecentPoems>
             <Categories></Categories>
             <CallAction></CallAction>
-
+            <FAQsection></FAQsection>
             <ContactSec></ContactSec>
         </div>
     );

@@ -1,13 +1,16 @@
 // import { Button } from '@material-tailwind/react';
 import { useContext } from 'react';
 import loginPic from '../../assets/img/Mobile login.gif'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import GoogleLogin from './GoogleLogin';
 // import TextField from '@mui/material/TextField';
 
 const Login = () => {
     const {logInUser} = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location);
 
     const handleLogin = event => {
         event.preventDefault()
@@ -19,6 +22,7 @@ const Login = () => {
         logInUser(email, password)
         .then(result =>{
             console.log(result.user);
+            navigate(location.state ? location.state : '/')
         })
         .catch(error => {
             console.log(error);

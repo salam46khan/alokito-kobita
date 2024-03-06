@@ -6,7 +6,7 @@ import prof from '../assets/img/profile.jpg'
 import PropTypes from 'prop-types';
 
 const PoemCard = ({poemItem}) => {
-    const {poem, poem_name, category, date} = poemItem;
+    const {poem, poem_name, category, date, _id} = poemItem;
     // console.log(poemItem);
     return (
         <div className="card outline-none shadow-lg hover:-translate-y-2 duration-200 hover:shadow-[#0006] rounded-2xl overflow-hidden bg-NavyBlue w-full max-w-xs">
@@ -32,7 +32,7 @@ const PoemCard = ({poemItem}) => {
                         </div>
                     </div>
                     <div>
-                        <Link to={'/'}>
+                        <Link to={`/poem/:${_id}`}>
                             <Button className="bg-cyan-200 mt-4 flex items-center mx-auto gap-2 text-black">
                                 Details
                                 <FaArrowRight />

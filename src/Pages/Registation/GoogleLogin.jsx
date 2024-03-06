@@ -2,14 +2,19 @@ import { Button } from "@material-tailwind/react";
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const GoogleLogin = () => {
     const {googleSignIn} = useContext(AuthContext);
+    const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location);
 
     const handleGoogleLogin = () => {
         googleSignIn()
         .then(result=> {
             console.log(result.user);
+            navigate(location.state ? location.state : '/')
         })
         .catch(error => {
             console.log(error);

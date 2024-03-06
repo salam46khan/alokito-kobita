@@ -1,17 +1,15 @@
-import { useState } from "react";
+
 import PoemCard from "../../Components/PoemCard";
 import { Link } from "react-router-dom";
 import { Button } from "@material-tailwind/react";
 import { FaArrowRight } from "react-icons/fa6";
+import usePoems from "../../hooks/usePoems";
 
 const RecentPoems = () => {
-    const [poem, setPoem] = useState([])
-    fetch('fake-poem-data.json')
-        .then(res => res.json())
-        .then(data => {
-            // console.log(data);
-            setPoem(data)
-        })
+    
+    const [poem] = usePoems();
+    const topSix = poem.slice(0,6)
+
     return (
         <div className="py-16 px-3 bg-gradient-to-tr from-[#e7fcfe] to-[#f0eeff] ">
             <div className="container mx-auto">
@@ -26,7 +24,7 @@ const RecentPoems = () => {
 
 
                     {
-                        poem.map(poem => <PoemCard key={poem.id} poemItem={poem}></PoemCard>)
+                        topSix.map(poem => <PoemCard key={poem.id} poemItem={poem}></PoemCard>)
                     }
                 </div>
                 <div className="mt-10">

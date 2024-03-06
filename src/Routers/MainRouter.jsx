@@ -45,7 +45,11 @@ const MainRouter = createBrowserRouter([
             },
             {
                 path: '/my-fev',
-                element: <PoemDetails></PoemDetails>
+                element: <p>hi</p>
+            },
+            {
+                path: '/poem/:id',
+                element: <PrivateRouter><PoemDetails></PoemDetails></PrivateRouter>
             }
         ]
     }
