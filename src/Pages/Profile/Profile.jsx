@@ -5,6 +5,7 @@ import 'react-tabs/style/react-tabs.css';
 import PageBanner from "../../Components/PageBanner";
 import Avatar from "./Avatar";
 import AvatarInfo from "./AvatarInfo";
+import MyReviews from "./MyReviews";
 
 const Profile = () => {
     return (
@@ -29,6 +30,9 @@ const Profile = () => {
                                     <Tab>
                                         <p className="font-bold">My Favorite</p>
                                     </Tab>
+                                    <Tab>
+                                        <p className="font-bold">Review</p>
+                                    </Tab>
                                 </TabList>
 
                                 <TabPanel>
@@ -36,6 +40,9 @@ const Profile = () => {
                                 </TabPanel>
                                 <TabPanel>
                                     <h2>Any content 2</h2>
+                                </TabPanel>
+                                <TabPanel>
+                                    <MyReviews></MyReviews>
                                 </TabPanel>
                             </Tabs>
                         </div>

@@ -3,7 +3,7 @@ const ContactForm = () => {
     return (
         <div className="w-full max-w-3xl px-5 py-8 rounded-md shadow-lg shadow-[#0002]">
             <form>
-                <div className="flex gap-3 items-center">
+                <div className="flex flex-col md:flex-row gap-3 items-center">
                     <div className="w-full md:w-1/2">
                         <div className="mb-4">
                             <label className="block text-NavyBlue text-md mb-2">

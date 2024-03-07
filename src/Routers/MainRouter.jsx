@@ -8,6 +8,7 @@ import Signup from "../Pages/Registation/Signup";
 import Profile from "../Pages/Profile/Profile";
 import PrivateRouter from "./PrivateRouter";
 import PoemDetails from "../Components/PoemDetails";
+import AddPoem from "../Pages/AddPoem/AddPoem";
 
 const MainRouter = createBrowserRouter([
     {
@@ -25,11 +26,11 @@ const MainRouter = createBrowserRouter([
             },
             {
                 path: '/all-poem',
-                element: <p>All poems</p>
+                element: <p>all poem</p>
             },
             {
                 path: '/add-poem',
-                element: <PrivateRouter><p>add poem</p></PrivateRouter>
+                element: <PrivateRouter><AddPoem></AddPoem></PrivateRouter>
             },
             {
                 path: '/login',

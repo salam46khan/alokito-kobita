@@ -24,7 +24,7 @@ const RecentPoems = () => {
 
 
                     {
-                        topSix.map(poem => <PoemCard key={poem.id} poemItem={poem}></PoemCard>)
+                        topSix.map(poem => <PoemCard key={poem._id} poemItem={poem}></PoemCard>)
                     }
                 </div>
                 <div className="mt-10">

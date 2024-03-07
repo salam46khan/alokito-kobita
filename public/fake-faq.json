@@ -1,22 +1,12 @@
 [
     {
-        "title": "How can I submit my poetry to Alokito Kobita?",
-        "content": "To submit your poetry, simply visit our 'Add Poem' page and fill out the submission form with your name, email, poem title, and the text of your poem. Make sure to review our submission guidelines before submitting."
+        "name": "Salam",
+        "testimonial": "habui jasfhausf ",
+        "avater": "https://i.ibb.co/jLFWG2B/man-cut.jpg"
     },
     {
-        "title": "Are there any specific guidelines for submitting poetry?",
-        "content": "Yes, we have a few guidelines to ensure the quality and consistency of submissions. Please make sure your poem is original, formatted correctly, and free from any offensive or inappropriate content. You can find detailed submission guidelines on our page."
-    },
-    {
-        "title": "How long does it take for submitted poetry to be published?",
-        "content": "We strive to review and publish submitted poetry in a timely manner. However, the review process may take some time depending on the volume of submissions we receive. Rest assured, we'll do our best to review your poetry as soon as possible and notify you once it's published."
-    },
-    {
-        "title": "Can I submit poems in languages other than English?",
-        "content": "Yes, we welcome poetry submissions in languages other than English. However, please keep in mind that our primary audience is English-speaking, so providing an English translation alongside your original poem is highly encouraged."
-    },
-    {
-        "title": "How can I contact Alokito Kobita for further inquiries or assistance?",
-        "content": "If you have any further questions, feedback, or inquiries, please don't hesitate to reach out to us via email at contact@alokitokobita.com or through our contact form on the website. We're here to assist you and address any concerns you may have."
+        "name": "Salam 2",
+        "testimonial": "habui jasfhausf ",
+        "avater": "https://i.ibb.co/jLFWG2B/man-cut.jpg"
     }
 ]
