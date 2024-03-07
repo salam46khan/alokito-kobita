@@ -21,8 +21,6 @@ const RecentPoems = () => {
                     </p>
                 </div>
                 <div className="flex flex-wrap justify-center  gap-6">
-
-
                     {
                         topSix.map(poem => <PoemCard key={poem._id} poemItem={poem}></PoemCard>)
                     }

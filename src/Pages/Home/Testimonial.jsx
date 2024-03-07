@@ -26,7 +26,7 @@ const Testimonial = () => {
     };
     return (
         <div className="pt-14 pb-5 px-3 bg-gradient-to-tr from-[#e7fcfe] to-[#f0eeff] ">
-            <div className="container mx-auto border overflow-hidden">
+            <div className="container mx-auto overflow-hidden">
                 <div className="w-full max-w-3xl mx-auto space-y-2 text-center mb-10">
                     <h2 className='text-NavyBlue font-bold text-4xl'>Testimonial</h2>
                     <hr className='w-[280px] mx-auto border-4 border-NavyBlue' />
@@ -38,12 +38,7 @@ const Testimonial = () => {
                     {
                         topReview.map(review => <TestimonialItem key={review._id} review={review}></TestimonialItem>)
                     }
-                    {/* <div>
-                        <h3>1</h3>
-                    </div>
-                    <div>
-                        <TestimonialItem></TestimonialItem>
-                    </div> */}
+                    
                 </Slider>
             </div>
         </div>

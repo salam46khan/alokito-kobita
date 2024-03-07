@@ -6,10 +6,11 @@ import PageBanner from "../../Components/PageBanner";
 import Avatar from "./Avatar";
 import AvatarInfo from "./AvatarInfo";
 import MyReviews from "./MyReviews";
+import MyPoem from "./MyPoem";
 
 const Profile = () => {
     return (
-        <div>
+        <div className="font-NormalText">
             <PageBanner title={'My Profile'}></PageBanner>
             <Avatar></Avatar>
             <div className="bg-gradient-to-tr from-[#e7fcfe] to-[#f0eeff] p-4">
@@ -36,7 +37,7 @@ const Profile = () => {
                                 </TabList>
 
                                 <TabPanel>
-                                    <h2>Any content </h2>
+                                    <MyPoem></MyPoem>
                                 </TabPanel>
                                 <TabPanel>
                                     <h2>Any content 2</h2>

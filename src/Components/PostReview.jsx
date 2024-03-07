@@ -29,7 +29,7 @@ const PostReview = () => {
             })
     }
     return (
-        <div className="p-5">
+        <div className="md:p-5">
             <div className="shadow-xl rounded-lg p-5">
                 <form onSubmit={handleReview}>
                     <textarea name='review' className="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="message" required />

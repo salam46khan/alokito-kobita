@@ -4,7 +4,7 @@ import { Button } from '@material-tailwind/react';
 import { FaArrowRight } from 'react-icons/fa6';
 const AboutSec = () => {
     return (
-        <div className="py-14 px-3">
+        <div className="py-8 px-3">
             <div className="container mx-auto flex flex-col md:flex-row items-center">
                 <div className="w-full md:w-1/2 ">
                     <img className='w-4/5 mx-auto p-8' src={AboutPic} alt="" />
