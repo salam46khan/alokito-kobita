@@ -8,15 +8,16 @@ const AddedPoemForm = () => {
     const { user } = useContext(AuthContext)
     const axiosPublic = useAxiosPublic()
 
+// select category start ----------------------------------
     const [selectedOption, setSelectedOption] = useState('love');
-
     const handleSelectChange = (event) => {
         setSelectedOption(event.target.value);
     };
     console.log(selectedOption);
+// select category end -------------------------------------
 
 
-
+// img updoad start-----------------------------------------
     const [image, setImage] = useState(null);
 
     const handleUploadImage = event => {
@@ -35,18 +36,18 @@ const AddedPoemForm = () => {
                 setImage(data.data.display_url)
             })
     }
+// img upload end---------------------------------------------------
 
-    // console.log(image);
 
-
-    // formated date 
+//formated date --------------------------------------------------- 
     const currentDate = new Date();
     const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Month is zero-based, so add 1
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
     const day = String(currentDate.getDate()).padStart(2, '0');
     const formattedDate = `${year}-${month}-${day}`;
   
-
+    
+// handlePublishPoem start ------------------------------------
     const handlePublishPoem = event => {
         event.preventDefault()
         const form = event.target;
@@ -73,6 +74,7 @@ const AddedPoemForm = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
+                    form.reset()
                 }
             })
     }
@@ -128,7 +130,7 @@ const AddedPoemForm = () => {
                     <textarea name='poem' className="shadow appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="type your poem name" />
                 </div>
                 <div className="mt-5 flex justify-center">
-                    <input className="bg-cyan-200 rounded-full inline-block px-8 uppercase text-sm  focus:outline-none focus:shadow-outline py-3 shadow-md shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 font-semibold" type="submit" value={'Publish'} />
+                    <input className="bg-cyan-200 rounded-full cursor-pointer inline-block px-8 uppercase text-sm  focus:outline-none focus:shadow-outline py-3 shadow-md shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 font-semibold" type="submit" value={'Publish'} />
                 </div>
             </form>
         </div>

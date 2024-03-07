@@ -7,6 +7,7 @@ import Avatar from "./Avatar";
 import AvatarInfo from "./AvatarInfo";
 import MyReviews from "./MyReviews";
 import MyPoem from "./MyPoem";
+import MyFev from "./MyFev";
 
 const Profile = () => {
     return (
@@ -40,7 +41,7 @@ const Profile = () => {
                                     <MyPoem></MyPoem>
                                 </TabPanel>
                                 <TabPanel>
-                                    <h2>Any content 2</h2>
+                                    <MyFev></MyFev>
                                 </TabPanel>
                                 <TabPanel>
                                     <MyReviews></MyReviews>

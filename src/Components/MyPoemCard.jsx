@@ -4,11 +4,30 @@ import { FaArrowRight } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types'
+import useAxiosPublic from "../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 // import img from '../assets/img/bg.jpg'
 
 const MyPoemCard = ({ myPoem }) => {
-    const { category, poem_name, poem, cover_photo, _id } = myPoem
+    const { category, poem_name, poem, cover_photo, _id } = myPoem;
+    const axiosPublic = useAxiosPublic()
+
+    const handlePoemDelete = (id) => {
+        // console.log(id);
+        axiosPublic.delete(`/mypoem/${id}`)
+            .then(res => {
+                console.log(res.data);
+                if (res.data.deletedCount > 0) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Your Poem has been Delete",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+    }
     return (
         <div className="p-2 rounded-md shadow-lg shadow-[#0002] flex flex-col md:flex-row gap-2">
             <div className="w-full md:w-2/5 border">
@@ -17,7 +36,7 @@ const MyPoemCard = ({ myPoem }) => {
             <div className="w-full md:w-3/5 px-2">
                 <p className="text-2xl">{poem_name}</p>
                 <p className="font-bold text-sm">{category}</p>
-                <p className="font-thin text-lg overflow-hidden h-[55px] text-gray-500">
+                <p className="font-thin text-lg overflow-hidden h-[55px] whitespace-pre-line text-gray-500">
                     {poem}
                 </p>
                 <div className="flex flex-wrap justify-between gap-2 my-1">
@@ -38,7 +57,7 @@ const MyPoemCard = ({ myPoem }) => {
                         </Link>
                     </div>
                     <div className="">
-                        <Button className="bg-red-300 px-6 md:px-3 py-2 flex items-center mx-auto gap-2 text-white">
+                        <Button onClick={() => handlePoemDelete(_id)} className="bg-red-300 px-6 md:px-3 py-2 flex items-center mx-auto gap-2 text-white">
                             <span className="hidden md:block">Delete</span>
                             <MdDelete className="text-2xl md:text-lg" />
                         </Button>

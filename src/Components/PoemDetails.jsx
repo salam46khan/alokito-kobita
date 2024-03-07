@@ -5,9 +5,10 @@ import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 const PoemDetails = () => {
 
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const [thisPoem, setThisPoem] = useState({})
     const { poem_name, poem, category, date, _id, viewer, cover_photo, avatar, poetry_name } = thisPoem;
     const respon = useParams()
@@ -24,12 +25,24 @@ const PoemDetails = () => {
     // console.log(thisPoem);
 
 
-    const handleFev = (id) =>{
+    const handleFev = (id) => {
         console.log(id);
         const poem_id = id;
         const user_email = user.email;
-        const fevPoem = {poem_id, user_email, poem_name, poetry_name, cover_photo, category}
+        const fevPoem = { poem_id, user_email, poem_name, poetry_name, cover_photo }
         console.log(fevPoem);
+        axiosPublic.post('/fev', fevPoem)
+            .then(res => {
+                console.log(res.data);
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Added fevorite Poems successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
     }
     return (
         <div>
@@ -56,7 +69,7 @@ const PoemDetails = () => {
                                 <p>View: {viewer}</p>
                             </div>
                             <div>
-                                <Button onClick={()=> handleFev(_id)} className="bg-cyan-200  flex items-center mx-auto gap-2 text-NavyBlue">
+                                <Button onClick={() => handleFev(_id)} className="bg-cyan-200 cursor-pointer flex items-center mx-auto gap-2 text-NavyBlue">
                                     Add Fevorite
                                     <IoBookmarks className="text-xl" />
                                 </Button>
