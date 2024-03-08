@@ -4,9 +4,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import GoogleLogin from './GoogleLogin';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 const Signup = () => {
     const { createUser } = useContext(AuthContext)
-
+    const axiosPublic = useAxiosPublic()
     const navigate = useNavigate()
     const location = useLocation()
     console.log(location);
@@ -39,18 +40,26 @@ const Signup = () => {
         // console.log(name, email, password, image);
 
         createUser(email, password)
-        .then(result => {
-            console.log(result.user);
-            updateProfile(result.user, {
-                displayName: name,
-                photoURL: image
+            .then(result => {
+                console.log(result.user);
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: image
+                })                
+                const userInfo = {
+                    name,
+                    email
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        console.log(res.data);
+                    })
+                navigate(location.state ? location.state : '/')
             })
-            navigate(location.state ? location.state : '/')
-        })
-        .catch(error =>{
-            // setError(error.message)
-            console.log(error);
-        })
+            .catch(error => {
+                // setError(error.message)
+                console.log(error);
+            })
 
     }
     return (
@@ -67,7 +76,7 @@ const Signup = () => {
                                 <label className="block text-NavyBlue text-md mb-2">
                                     Full Name
                                 </label>
-                                <input name='name' className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="full name" required/>
+                                <input name='name' className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="full name" required />
                             </div>
 
 
@@ -75,14 +84,14 @@ const Signup = () => {
                                 <label className="block text-NavyBlue text-md mb-2">
                                     Email Address
                                 </label>
-                                <input name='email' className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="email address" required/>
+                                <input name='email' className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="email" placeholder="email address" required />
                             </div>
 
                             <div className="mb-4">
                                 <label className="block text-NavyBlue text-md  mb-2">
                                     Password
                                 </label>
-                                <input name='password' className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="password" required/>
+                                <input name='password' className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" placeholder="password" required />
                             </div>
 
                             <div className='mb-4 '>
@@ -91,7 +100,7 @@ const Signup = () => {
                                     onChange={handleUploadImage}
                                     className="shadow appearance-none border rounded-full w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline   relative m-0 block min-w-0 flex-auto cursor-pointer border-solid border-neutral-300 bg-clip-padding file:py-3  file:border-none file:px-5 file:mr-3 file:bg-NavyBlue file:text-ElectricBlue text-xs font-normal text-neutral-700 transition duration-300 ease-in-out  file:cursor-pointer file:overflow-hidden hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary"
 
-                                    type="file" required/>
+                                    type="file" required />
                             </div>
                             <div className="mb-4">
                                 <input className="bg-cyan-200 rounded-full w-full uppercase text-sm  focus:outline-none focus:shadow-outline py-3 shadow-md shadow-gray-400 hover:shadow-lg hover:shadow-gray-400 " type="submit" value={'Sign Up'} />

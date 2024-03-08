@@ -19,14 +19,9 @@ const AllPoem = () => {
             <div className="py-14 px-3 font-NormalText">
                 <div className="container mx-auto">
                     <div>
-                        search section
+                        {/* search section */}
                     </div>
-                    <div>
-                        {/* {
-                            expectPoem.map(poem => <PoemCard key={poem._id} poemItem={poem}></PoemCard>)
-                        } */}
-
-                    </div>
+                    
                     <div className="flex flex-wrap justify-center  gap-6">
                         {
                             expectPoem.map(poem => <PoemCard key={poem._id} poemItem={poem}></PoemCard>)

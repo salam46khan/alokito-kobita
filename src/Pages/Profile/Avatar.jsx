@@ -5,7 +5,6 @@ import { Button } from "@material-tailwind/react";
 import { RiUserFollowLine } from "react-icons/ri";
 import { IoMailOpenOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { FaPhoneAlt } from "react-icons/fa";
 
 const Avatar = () => {
     const { user } = useContext(AuthContext)
@@ -20,15 +19,11 @@ const Avatar = () => {
                 </div>
             </div>
             <div className="w-full md:w-3/4 py-3 text-center md:text-start flex flex-col md:flex-row justify-between items-center">
-                <div className="space-y-1">
+                <div className="space-y-1 py-1">
                     <h2 className="text-3xl font-bold text-NavyBlue">{user?.displayName}</h2>
-                    <div className="flex items-center gap-2 text-gray-400">
+                    <div className="flex items-center text-gray-400">
                         <IoMailOpenOutline />
                         <p>{user.email}</p>
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-400">
-                        <FaPhoneAlt />
-                        <p>017---</p>
                     </div>
                     
                 </div>

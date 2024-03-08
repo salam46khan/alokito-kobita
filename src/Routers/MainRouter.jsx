@@ -11,6 +11,7 @@ import PoemDetails from "../Components/PoemDetails";
 import AddPoem from "../Pages/AddPoem/AddPoem";
 import AllPoem from "../Pages/AllPoem/AllPoem";
 import UpdatePoem from "../Pages/Profile/UpdatePoem";
+import ContactUs from "../Shared/ContactUs";
 
 const MainRouter = createBrowserRouter([
     {
@@ -48,7 +49,7 @@ const MainRouter = createBrowserRouter([
             },
             {
                 path: '/contact',
-                element: <p>hi</p>
+                element: <ContactUs></ContactUs>
             },
             {
                 path: '/poem/:id',
