@@ -12,7 +12,6 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import ProfileUpdateFrm from "./ProfileUpdateFrm";
-import useMyProfile from "../../hooks/useMyProfile";
 
 const Profile = () => {
     const axiosPublic = useAxiosPublic()

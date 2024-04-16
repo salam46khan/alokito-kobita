@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 const ProfileUpdateFrm = ({proInfo}) => {
 
     const axiosPublic = useAxiosPublic()
-    const {_id, email, address, phone, bio, birthday} = proInfo;
+    const {_id, address, phone, bio, birthday} = proInfo;
     const handleProUpdate = event => {
         event.preventDefault();
         const form = event.target;
