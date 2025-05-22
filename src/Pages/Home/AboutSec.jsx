@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import AboutPic from '../../assets/img/Hand holding pen.gif'
+import AboutPic from '../../assets/img/write.jpg'
 import { Button } from '@material-tailwind/react';
 import { FaArrowRight } from 'react-icons/fa6';
 const AboutSec = () => {
